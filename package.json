@@ -2,31 +2,46 @@
   "name": "test-capacitor-app",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^16.11.31",
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.6.3",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ios": "npx cap run ios -l --external",
+    "android": "npx cap run android -l --external",
+    "update": "npx cap update",
+    "sync": "npx cap sync"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
+  },
+  "dependencies": {
+    "@capacitor/action-sheet": "^1.0.8",
+    "@capacitor/android": "^3.4.3",
+    "@capacitor/cli": "^3.4.3",
+    "@capacitor/core": "^3.5.0",
+    "@capacitor/ios": "^3.4.3",
+    "@capacitor/status-bar": "^1.0.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@ionic/pwa-elements": "^3.1.1",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.3",
+    "@reactivers/use-safe-area": "^1.0.0",
+    "@types/node": "^16.11.31",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.0",
+    "jotai": "^1.6.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "os": "^0.1.2"
   },
   "browserslist": {
     "production": [

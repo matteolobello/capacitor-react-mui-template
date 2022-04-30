@@ -1,26 +1,76 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+	createTheme,
+	CssBaseline,
+	ThemeProvider,
+	useMediaQuery
+} from "@mui/material"
+import { useEffect, useMemo, useState } from "react"
+import {
+	Location,
+	Navigate,
+	Route,
+	Routes,
+	useLocation
+} from "react-router-dom"
+import useSwipeToGoBack from "./hooks/useSwipeToGoBack"
+import useSystemUi from "./hooks/useSystemUi"
+import Details from "./routes/Details"
+import Home from "./routes/Home"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	const location = useLocation()
+	const [displayLocation, setDisplayLocation] = useState<Location>(location)
+	const [transitionStage, setTransitionStage] = useState<"fadeIn" | "fadeOut">(
+		"fadeIn"
+	)
+
+	const { updateStatusBar } = useSystemUi()
+
+	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
+
+	const theme = useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode: prefersDarkMode ? "dark" : "light"
+				}
+			}),
+		[prefersDarkMode]
+	)
+
+	useSwipeToGoBack()
+
+	useEffect(() => {
+		if (location !== displayLocation) {
+			setTransitionStage("fadeOut")
+		}
+	}, [location])
+
+	useEffect(() => {
+		updateStatusBar(prefersDarkMode ? "dark" : "light")
+	}, [prefersDarkMode])
+
+	return (
+		<ThemeProvider theme={theme}>
+			<CssBaseline enableColorScheme />
+
+			<div
+				className={transitionStage}
+				onAnimationEnd={() => {
+					if (transitionStage === "fadeOut") {
+						setTransitionStage("fadeIn")
+						setDisplayLocation(location)
+					}
+				}}
+			>
+				<Routes location={displayLocation}>
+					<Route path="*" element={<Navigate replace to="/" />} />
+					<Route path="/" element={<Home />} />
+					<Route path="details" element={<Details />} />
+				</Routes>
+			</div>
+		</ThemeProvider>
+	)
 }
 
-export default App;
+export default App
