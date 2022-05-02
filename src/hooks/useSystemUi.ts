@@ -4,20 +4,20 @@ import { useSafeArea } from "@reactivers/use-safe-area"
 import { useCallback } from "react"
 
 const useSystemUi = () => {
-	const safeArea = useSafeArea()
+  const safeArea = useSafeArea()
 
-	const updateStatusBar = useCallback((style: "light" | "dark") => {
-		if (Capacitor.getPlatform() !== "ios") {
-			return
-		}
+  const updateStatusBar = useCallback((style: "light" | "dark") => {
+    if (Capacitor.getPlatform() !== "ios") {
+      return
+    }
 
-		StatusBar.setStyle({ style: style === "light" ? Style.Light : Style.Dark })
-	}, [])
+    StatusBar.setStyle({ style: style === "light" ? Style.Light : Style.Dark })
+  }, [])
 
-	return {
-		updateStatusBar,
-		safeArea
-	}
+  return {
+    updateStatusBar,
+    safeArea
+  }
 }
 
 export default useSystemUi

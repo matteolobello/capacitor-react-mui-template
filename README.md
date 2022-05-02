@@ -8,13 +8,13 @@
 
 <table>
   <tr>
-    <td> 
+    <td>
       Android
     </td>
     <td>
       iOS
     </td>
-  </tr> 
+  </tr>
   <tr>
     <td>
       <img src="screenshots/android.png" alt="Android" width="360px">

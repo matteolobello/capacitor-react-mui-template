@@ -7,13 +7,13 @@ import App from "./App"
 import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-		<SafeAreaProvider>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</SafeAreaProvider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <SafeAreaProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SafeAreaProvider>
+  </React.StrictMode>
 )
 
 defineCustomElements(window)
