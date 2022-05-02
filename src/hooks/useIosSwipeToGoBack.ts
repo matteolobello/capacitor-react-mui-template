@@ -1,3 +1,4 @@
+import { Capacitor } from "@capacitor/core"
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
@@ -6,11 +7,15 @@ const disabledRoutes = ["/"]
 const THRESHOLD_EDGE = 80
 const MIN_MOVEMENT_FOR_SWIPE = 20
 
-const useSwipeToGoBack = () => {
+const useIosSwipeToGoBack = () => {
 	const { pathname } = useLocation()
 	const navigate = useNavigate()
 
 	useEffect(() => {
+		if (Capacitor.getPlatform() !== "ios") {
+			return
+		}
+
 		let initSwipeX: number | undefined = undefined
 		let shouldListen = true
 
@@ -55,4 +60,4 @@ const useSwipeToGoBack = () => {
 	}, [pathname])
 }
 
-export default useSwipeToGoBack
+export default useIosSwipeToGoBack

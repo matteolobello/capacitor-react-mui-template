@@ -10,7 +10,9 @@ export default function Tab1() {
 
 	return (
 		<>
-			<Typography variant="h3">Tab 1</Typography>
+			<Typography variant="h3" fontWeight={700} marginTop={4}>
+				Tab 1
+			</Typography>
 			<Stack direction="row" spacing={2}>
 				<Button variant="contained" onClick={() => setCount(count + 1)}>
 					Counter: {count}

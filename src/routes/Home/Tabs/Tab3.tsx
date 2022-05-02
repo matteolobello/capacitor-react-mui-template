@@ -26,7 +26,9 @@ export default function Tab3() {
 
 	return (
 		<>
-			<Typography variant="h3">Tab 3</Typography>
+			<Typography variant="h3" fontWeight={700} marginTop={4}>
+				Tab 3
+			</Typography>
 			<Button onClick={handleClick}>Click me</Button>
 		</>
 	)

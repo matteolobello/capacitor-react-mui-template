@@ -11,7 +11,9 @@ import {
 export default function Tab2() {
 	return (
 		<>
-			<Typography variant="h3">Tab 2</Typography>
+			<Typography variant="h3" fontWeight={700} marginTop={4}>
+				Tab 2
+			</Typography>
 			<List>
 				{new Array(60).fill(0).map((_, i) => (
 					<ListItem key={`tab-2-item-${i}`}>

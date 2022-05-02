@@ -12,7 +12,7 @@ import {
 	Routes,
 	useLocation
 } from "react-router-dom"
-import useSwipeToGoBack from "./hooks/useSwipeToGoBack"
+import useIosSwipeToGoBack from "./hooks/useIosSwipeToGoBack"
 import useSystemUi from "./hooks/useSystemUi"
 import Details from "./routes/Details"
 import Home from "./routes/Home"
@@ -38,7 +38,7 @@ const App = () => {
 		[prefersDarkMode]
 	)
 
-	useSwipeToGoBack()
+	useIosSwipeToGoBack()
 
 	useEffect(() => {
 		if (location !== displayLocation) {
