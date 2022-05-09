@@ -26,7 +26,7 @@
       <img src="screenshots/ios.png" alt="iOS">
     </td>
     <td>
-      <img src="screenshots/web.png" alt="iOS">
+      <img src="screenshots/web.png" alt="Web">
     </td>
   </tr>
 </table>
