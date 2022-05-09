@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material"
-import Container from "../../components/Container"
+
+import Container from "../../components/Container/Container"
 
 export default function Details() {
   return (

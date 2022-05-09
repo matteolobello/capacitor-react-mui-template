@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom"
+
 import { Button, Stack, Typography } from "@mui/material"
 import { useAtom } from "jotai"
-import { useNavigate } from "react-router-dom"
+
 import { counterAtom } from "../Home.atoms"
 
 export default function Tab1() {

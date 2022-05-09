@@ -1,6 +1,7 @@
-import { Capacitor } from "@capacitor/core"
 import { useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
+
+import { Capacitor } from "@capacitor/core"
 
 const disabledRoutes = ["/"]
 

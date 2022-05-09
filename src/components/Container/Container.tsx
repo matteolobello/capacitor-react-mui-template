@@ -1,15 +1,17 @@
+import { useNavigate } from "react-router-dom"
+
 import { ArrowBack } from "@mui/icons-material"
 import {
   AppBar,
-  Container as MUIContainer,
   ContainerTypeMap,
   IconButton,
+  Container as MUIContainer,
   Toolbar,
   Typography
 } from "@mui/material"
 import { DefaultComponentProps } from "@mui/material/OverridableComponent"
 import { Box } from "@mui/system"
-import { useNavigate } from "react-router-dom"
+
 import useSystemUi from "../../hooks/useSystemUi"
 
 type IContainer = DefaultComponentProps<

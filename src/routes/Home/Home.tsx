@@ -1,3 +1,5 @@
+import { useMemo } from "react"
+
 import { Circle, EmojiEmotions, Square } from "@mui/icons-material"
 import {
   BottomNavigation,
@@ -6,11 +8,13 @@ import {
   useTheme
 } from "@mui/material"
 import { useAtom } from "jotai"
-import { useMemo } from "react"
-import Container from "../../components/Container"
+
+import Container from "../../components/Container/Container"
 import useSystemUi from "../../hooks/useSystemUi"
 import { tabItemAtom } from "./Home.atoms"
-import { Tab1, Tab2, Tab3 } from "./Tabs"
+import Tab1 from "./Tabs/Tab1"
+import Tab2 from "./Tabs/Tab2"
+import Tab3 from "./Tabs/Tab3"
 
 export type TabId = "tab1" | "tab2" | "tab3"
 

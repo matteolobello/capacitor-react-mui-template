@@ -1,4 +1,5 @@
 import { CapacitorConfig } from "@capacitor/cli"
+
 import os from "os"
 
 const config: CapacitorConfig = {

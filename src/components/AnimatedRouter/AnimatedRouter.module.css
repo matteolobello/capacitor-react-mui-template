@@ -1,11 +1,3 @@
-body {
-  box-sizing: border-box;
-  user-select: none;
-  touch-action: manipulation;
-}
-
-/* Router transitions */
-
 .fadeIn {
   animation: 0.2s fadeIn forwards;
 }

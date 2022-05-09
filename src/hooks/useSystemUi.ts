@@ -1,7 +1,10 @@
-import { Capacitor } from "@capacitor/core"
-import { StatusBar, Style } from "@capacitor/status-bar"
 import { useSafeArea } from "@reactivers/use-safe-area"
 import { useCallback } from "react"
+
+import { Capacitor } from "@capacitor/core"
+import { StatusBar, Style } from "@capacitor/status-bar"
+
+import { useMediaQuery } from "@mui/material"
 
 const useSystemUi = () => {
   const safeArea = useSafeArea()
@@ -14,9 +17,12 @@ const useSystemUi = () => {
     StatusBar.setStyle({ style: style === "light" ? Style.Light : Style.Dark })
   }, [])
 
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
+
   return {
     updateStatusBar,
-    safeArea
+    safeArea,
+    prefersDarkMode
   }
 }
 
